@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Tips - CyberShield</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CyberShield</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encyclopedia/index.html">Encyclopedia</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="checklist.html">Checklist</a></li>
+                <li><a href="feed.html">News & Tips</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="feed-container">
+            <h1>News & Tips Feed</h1>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Tips">Tips</button>
+                <button class="filter-btn" data-category="News">News</button>
+                <button class="filter-btn" data-category="Awareness">Awareness</button>
+            </div>
+            
+            <div id="feedContent" class="feed-content">
+                <!-- Feed items will be loaded here -->
+                <div class="loading">Loading tips and news...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberShield. All rights reserved.</p>
+    </footer>
+
+    <script src="js/feed.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeed();
+        });
+    </script>
+</body>
+</html>

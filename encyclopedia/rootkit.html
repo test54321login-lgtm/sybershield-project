@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rootkit - Malware Encyclopedia</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CyberShield</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../encyclopedia/index.html">Encyclopedia</a></li>
+                <li><a href="../quiz.html">Quiz</a></li>
+                <li><a href="../checklist.html">Checklist</a></li>
+                <li><a href="../feed.html">News & Tips</a></li>
+                <li><a href="../login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="malware-detail-container">
+            <h1>Rootkit</h1>
+            <div class="severity-indicator critical">Critical Severity</div>
+            
+            <section class="malware-info">
+                <h2>What is a Rootkit?</h2>
+                <p>A rootkit is a collection of software tools that enable administrator-level access to a computer or computer network. Typically, a cracker installs a rootkit on a compromised system to hide the intrusion and obtain continued privileged access to the computer. Rootkits operate at a low level in the system, often within the kernel, making them difficult to detect and remove.</p>
+            </section>
+            
+            <section class="malware-info">
+                <h2>How Does it Work?</h2>
+                <ol>
+                    <li>The rootkit is installed on the system, often through other malware</li>
+                    <li>It modifies system files and processes to hide its presence</li>
+                    <li>It can intercept and modify system calls to conceal malicious activities</li>
+                    <li>Rootkits may create hidden user accounts with administrative privileges</li>
+                    <li>They can hide files, processes, and network connections from detection</li>
+                </ol>
+            </section>
+            
+            <section class="malware-info">
+                <h2>Real-World Example</h2>
+                <p>Kernel-mode rootkits like the Sony BMG rootkit scandal of 2005 demonstrated how rootkits could be installed without user knowledge. Sony BMG included a rootkit on music CDs to prevent unauthorized copying, but it created serious security vulnerabilities. The rootkit hid itself and other files from the operating system, making it difficult to remove and leaving systems open to exploitation by other malware.</p>
+            </section>
+            
+            <section class="malware-info">
+                <h2>How to Protect Yourself</h2>
+                <ul>
+                    <li>Use anti-rootkit tools like GMER or Kaspersky TDSSKiller</li>
+                    <li>Keep your operating system and security software updated</li>
+                    <li>Monitor system behavior for unusual activity</li>
+                    <li>Use virtualization and sandboxing for suspicious activities</li>
+                    <li>Implement strict access controls and user privilege management</li>
+                    <li>Regularly audit system logs for anomalies</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberShield. All rights reserved.</p>
+    </footer>
+</body>
+</html>

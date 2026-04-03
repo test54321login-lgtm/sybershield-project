@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield - Cyber Awareness & Malware Information Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CyberShield</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encyclopedia/index.html">Encyclopedia</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="checklist.html">Checklist</a></li>
+                <li><a href="feed.html">News & Tips</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>CyberShield</h1>
+            <p>Your Gateway to Cyber Awareness & Malware Education</p>
+            <p class="tagline">Stay Safe, Stay Informed</p>
+            <div class="cta-buttons">
+                <a href="encyclopedia/index.html" class="btn btn-primary">Explore Malware Types</a>
+                <a href="login.html" class="btn btn-secondary">Get Started</a>
+            </div>
+        </section>
+
+        <section class="stats-bar">
+            <div class="stat">
+                <h3 id="malware-count">10</h3>
+                <p>Malware Types Covered</p>
+            </div>
+            <div class="stat">
+                <h3 id="quiz-questions">10</h3>
+                <p>Quiz Questions</p>
+            </div>
+            <div class="stat">
+                <h3 id="tips-available">0</h3>
+                <p>Tips Available</p>
+            </div>
+        </section>
+
+        <section class="tip-of-day">
+            <h2>Tip of the Day</h2>
+            <div id="daily-tip">Loading today's tip...</div>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Malware Encyclopedia</h3>
+                    <p>Learn about different types of malware and how to protect yourself</p>
+                    <a href="encyclopedia/index.html">Explore</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Interactive Quiz</h3>
+                    <p>Test your knowledge with our cyber awareness quiz</p>
+                    <a href="quiz.html">Take Quiz</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Safety Checklist</h3>
+                    <p>Evaluate your cybersecurity hygiene with our checklist</p>
+                    <a href="checklist.html">Check Now</a>
+                </div>
+                <div class="feature-card">
+                    <h3>News & Tips</h3>
+                    <p>Stay updated with the latest cybersecurity news and tips</p>
+                    <a href="feed.html">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberShield. All rights reserved.</p>
+    </footer>
+
+    <script src="js/feed.js"></script>
+    <script>
+        // Load tip of the day on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDailyTip();
+            
+            // Update tips count
+            fetch('/api/feed')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('tips-available').textContent = data.tips.length;
+                })
+                .catch(error => console.error('Error loading tips count:', error));
+        });
+    </script>
+</body>
+</html>

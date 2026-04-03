@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Safety Checklist - CyberShield</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CyberShield</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encyclopedia/index.html">Encyclopedia</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="checklist.html">Checklist</a></li>
+                <li><a href="feed.html">News & Tips</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="checklist-container">
+            <h1>Cyber Safety Checklist</h1>
+            <p>Evaluate your cybersecurity hygiene by checking off the items you follow</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="checklistProgress" class="progress-fill"></div>
+                </div>
+                <span id="progressPercentage">0% Complete</span>
+            </div>
+            
+            <div class="checklist-items">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item1" value="1">
+                    <label for="item1">I use a unique, strong password for each account.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item2" value="2">
+                    <label for="item2">I have enabled Two-Factor Authentication (2FA) on important accounts.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item3" value="3">
+                    <label for="item3">I regularly update my operating system and software.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item4" value="4">
+                    <label for="item4">I avoid clicking unknown or suspicious links in emails/messages.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item5" value="5">
+                    <label for="item5">I use a reputable antivirus / anti-malware solution.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item6" value="6">
+                    <label for="item6">I do not download software from untrusted sources.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item7" value="7">
+                    <label for="item7">I check for HTTPS before entering personal data on websites.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item8" value="8">
+                    <label for="item8">I use a VPN on public Wi-Fi networks.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item9" value="9">
+                    <label for="item9">I regularly back up important files.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item10" value="10">
+                    <label for="item10">I do not share passwords with others.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item11" value="11">
+                    <label for="item11">I review app permissions before installing on my phone.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item12" value="12">
+                    <label for="item12">I log out of accounts when using shared/public computers.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item13" value="13">
+                    <label for="item13">I am aware of common phishing email red flags.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item14" value="14">
+                    <label for="item14">I have reviewed my social media privacy settings.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item15" value="15">
+                    <label for="item15">I know what to do if my account gets hacked.</label>
+                </div>
+            </div>
+            
+            <button id="saveChecklistBtn" class="btn btn-primary">Save Progress</button>
+        </div>
+        
+        <!-- Practice Space Section -->
+        <div class="practice-space">
+            <h2>Practice Space</h2>
+            
+            <div class="practice-section">
+                <h3>Password Strength Tester</h3>
+                <div class="form-group">
+                    <input type="password" id="passwordInput" placeholder="Enter a password to test">
+                    <div id="passwordStrengthIndicator" class="strength-indicator">
+                        <div class="strength-meter">
+                            <div id="strengthFill" class="strength-fill"></div>
+                        </div>
+                        <span id="strengthText">Enter a password</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="practice-section">
+                <h3>Spot the Phishing Email</h3>
+                <p>Which of these emails looks suspicious? Click to reveal the answer.</p>
+                
+                <div class="phishing-emails">
+                    <div class="email-card" data-email="safe">
+                        <h4>Security Alert: Your Account</h4>
+                        <p>We detected unusual activity on your account. Please verify your identity by clicking here.</p>
+                        <div class="email-meta">security@yourbank.com</div>
+                    </div>
+                    
+                    <div class="email-card" data-email="phishing">
+                        <h4>CONGRATULATIONS! You Won $1,000,000!</h4>
+                        <p>Click here immediately to claim your prize! Limited time offer!</p>
+                        <div class="email-meta">winner@freemoney.nowhere.com</div>
+                    </div>
+                    
+                    <div class="email-card" data-email="safe">
+                        <h4>Monthly Statement Ready</h4>
+                        <p>Your monthly statement is ready to view. Log in to your account to access it.</p>
+                        <div class="email-meta">statements@officialbank.com</div>
+                    </div>
+                </div>
+                
+                <div id="phishingFeedback" class="feedback"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberShield. All rights reserved.</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/checklist.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authGuard();
+            loadChecklist();
+            initPracticeSpace();
+        });
+    </script>
+</body>
+</html>

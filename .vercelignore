@@ -1,0 +1,11 @@
+node_modules/
+.env
+.git/
+.gitignore
+.vscode/
+*.log
+README.md
+CyberShield_PRD.pdf
+CyberShield_TRD.pdf
+package-lock.json
+.env.example

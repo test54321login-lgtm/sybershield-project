@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - CyberShield</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CyberShield</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encyclopedia/index.html">Encyclopedia</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="checklist.html">Checklist</a></li>
+                <li><a href="feed.html">News & Tips</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="quiz-container">
+            <h1>Cyber Awareness Quiz</h1>
+            
+            <div id="quizIntro" class="quiz-section">
+                <p>Test your knowledge of cybersecurity with this 10-question quiz. You have 30 seconds per question.</p>
+                <button id="startQuizBtn" class="btn btn-primary">Start Quiz</button>
+            </div>
+            
+            <div id="quizArea" class="quiz-section" style="display: none;">
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="progressBar" class="progress-fill"></div>
+                        </div>
+                        <span id="progressText">Question <span id="currentQuestion">1</span> of 10</span>
+                    </div>
+                    <div class="timer-container">
+                        <span id="timer">30s</span>
+                    </div>
+                </div>
+                
+                <div id="questionContainer">
+                    <h3 id="questionText"></h3>
+                    <div id="optionsContainer" class="options-list">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <button id="nextQuestionBtn" class="btn btn-primary" style="display: none;">Next Question</button>
+            </div>
+            
+            <div id="resultsSection" class="quiz-section" style="display: none;">
+                <h2>Quiz Results</h2>
+                <div id="scoreDisplay">
+                    <h3>Your Score: <span id="finalScore"></span>/10</h3>
+                    <p id="resultMessage"></p>
+                </div>
+                <button id="retakeQuizBtn" class="btn btn-secondary">Retake Quiz</button>
+                <button id="viewHistoryBtn" class="btn btn-outline">View History</button>
+            </div>
+            
+            <div id="historySection" class="quiz-section" style="display: none;">
+                <h2>Quiz History</h2>
+                <div id="historyList">
+                    <!-- History will be populated by JavaScript -->
+                </div>
+                <button id="backToQuizBtn" class="btn btn-outline">Back to Quiz</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberShield. All rights reserved.</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/quiz.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authGuard();
+            initQuiz();
+        });
+    </script>
+</body>
+</html>
