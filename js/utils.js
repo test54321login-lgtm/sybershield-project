@@ -105,7 +105,25 @@ async function apiFetch(url, options = {}) {
     };
     
     // Make the request
-    return fetch(url, fetchOptions);
+    const response = await fetch(url, fetchOptions);
+    
+    // Check if response is OK (status 200-299)
+    if (!response.ok) {
+        let errorText;
+        try {
+            const errorData = await response.json();
+            errorText = errorData.error || JSON.stringify(errorData);
+        } catch {
+            errorText = await response.text() || response.statusText;
+        }
+        console.error(`API Error [${response.status}]:`, errorText);
+        const error = new Error(`API request failed: ${response.status} ${response.statusText}`);
+        error.response = response;
+        error.responseText = errorText;
+        throw error;
+    }
+    
+    return response;
 }
 
 /**

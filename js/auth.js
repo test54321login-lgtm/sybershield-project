@@ -23,12 +23,13 @@ async function handleSignup(e) {
             body: JSON.stringify({ username, email, password })
         });
         
-        const data = await response.json();
-        
         if (!response.ok) {
+            const data = await response.json();
             showError(data.error || 'Signup failed');
             return;
         }
+        
+        const data = await response.json();
         
         // Store token and redirect
         localStorage.setItem('cs_token', data.token);
@@ -67,12 +68,13 @@ async function handleLogin(e) {
             body: JSON.stringify({ email, password })
         });
         
-        const data = await response.json();
-        
         if (!response.ok) {
+            const data = await response.json();
             showError(data.error || 'Login failed');
             return;
         }
+        
+        const data = await response.json();
         
         // Store token and redirect
         localStorage.setItem('cs_token', data.token);
