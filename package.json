@@ -8,6 +8,7 @@
     "build": "echo 'Build complete - Static site ready for deployment'",
     "start": "vercel dev",
     "setup": "node scripts/setup-mongodb.js",
+    "test": "node scripts/test-connection.js",
     "lint": "echo 'No lint configured'"
   },
   "keywords": [
