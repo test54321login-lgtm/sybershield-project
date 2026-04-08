@@ -7,6 +7,7 @@
     "dev": "vercel dev",
     "build": "echo 'Build complete - Static site ready for deployment'",
     "start": "vercel dev",
+    "setup": "node scripts/setup-mongodb.js",
     "lint": "echo 'No lint configured'"
   },
   "keywords": [
@@ -20,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^17.4.1",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^6.0.0"
   },

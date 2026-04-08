@@ -19,67 +19,81 @@ function authGuard() {
 }
 
 /**
- * Show error message in the UI
- * @param {string} msg - Error message to display
+ * Clear all messages from the UI
  */
-function showError(msg) {
+function clearMessages() {
+    const errorEl = document.getElementById('errorMessage');
+    const successEl = document.getElementById('successMessage');
+    if (errorEl) errorEl.style.display = 'none';
+    if (successEl) successEl.style.display = 'none';
+}
+
+/**
+ * Show error message in the UI with animation
+ * @param {string} msg - Error message to display
+ * @param {number} duration - Duration to show message in milliseconds (0 = no auto-hide)
+ */
+function showError(msg, duration = 5000) {
     // Create or update error message element
     let errorEl = document.getElementById('errorMessage');
     if (!errorEl) {
         errorEl = document.createElement('div');
         errorEl.id = 'errorMessage';
         errorEl.className = 'error-message';
-        errorEl.style.cssText = `
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-            border: 1px solid #f5c6cb;
-        `;
         // Insert at the top of the main content area
         const main = document.querySelector('main') || document.body;
         main.insertBefore(errorEl, main.firstChild);
     }
+    
     errorEl.textContent = msg;
     errorEl.style.display = 'block';
+    errorEl.style.animation = 'slideDown 0.3s ease-out';
     
-    // Hide after 5 seconds
-    setTimeout(() => {
-        errorEl.style.display = 'none';
-    }, 5000);
+    // Hide after specified duration
+    if (duration > 0) {
+        setTimeout(() => {
+            if (errorEl) {
+                errorEl.style.animation = 'slideUp 0.3s ease-out';
+                setTimeout(() => {
+                    errorEl.style.display = 'none';
+                }, 300);
+            }
+        }, duration);
+    }
 }
 
 /**
- * Show success message in the UI
+ * Show success message in the UI with animation
  * @param {string} msg - Success message to display
+ * @param {number} duration - Duration to show message in milliseconds (0 = no auto-hide)
  */
-function showSuccess(msg) {
+function showSuccess(msg, duration = 3000) {
     // Create or update success message element
     let successEl = document.getElementById('successMessage');
     if (!successEl) {
         successEl = document.createElement('div');
         successEl.id = 'successMessage';
         successEl.className = 'success-message';
-        successEl.style.cssText = `
-            background-color: #d4edda;
-            color: #155724;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-            border: 1px solid #c3e6cb;
-        `;
         // Insert at the top of the main content area
         const main = document.querySelector('main') || document.body;
         main.insertBefore(successEl, main.firstChild);
     }
+    
     successEl.textContent = msg;
     successEl.style.display = 'block';
+    successEl.style.animation = 'slideDown 0.3s ease-out';
     
-    // Hide after 3 seconds
-    setTimeout(() => {
-        successEl.style.display = 'none';
-    }, 3000);
+    // Hide after specified duration
+    if (duration > 0) {
+        setTimeout(() => {
+            if (successEl) {
+                successEl.style.animation = 'slideUp 0.3s ease-out';
+                setTimeout(() => {
+                    successEl.style.display = 'none';
+                }, 300);
+            }
+        }, duration);
+    }
 }
 
 /**

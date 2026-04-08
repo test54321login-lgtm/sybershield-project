@@ -23,49 +23,103 @@
 
     <main>
         <div class="auth-container">
-            <div class="auth-form">
-                <h2>Login to CyberShield</h2>
+            <div class="auth-form" style="opacity: 1; transform: translateX(0); transition: all 0.3s ease;">
+                <div class="auth-header">
+                    <h2>Welcome Back</h2>
+                    <p class="auth-subtitle">Login to your CyberShield account</p>
+                </div>
                 
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="you@example.com"
+                            required
+                            autocomplete="email"
+                        >
+                        <span class="form-help"></span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <span class="form-help"></span>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span class="btn-text">Login</span>
+                    </button>
                 </form>
                 
-                <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="showSignup" class="link-primary">Create one</a></p>
+                </div>
             </div>
             
-            <div class="auth-form" id="signupFormContainer" style="display: none;">
-                <h2>Sign Up for CyberShield</h2>
+            <div class="auth-form" id="signupFormContainer" style="display: none; opacity: 0; transform: translateX(10px); transition: all 0.3s ease;">
+                <div class="auth-header">
+                    <h2>Join CyberShield</h2>
+                    <p class="auth-subtitle">Create your account to get started</p>
+                </div>
                 
                 <form id="signupForm">
                     <div class="form-group">
-                        <label for="signupUsername">Username:</label>
-                        <input type="text" id="signupUsername" name="username" required>
+                        <label for="signupUsername">Username</label>
+                        <input 
+                            type="text" 
+                            id="signupUsername" 
+                            name="username" 
+                            placeholder="Choose a username"
+                            required
+                            autocomplete="username"
+                        >
+                        <span class="form-help">3-50 characters</span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="signupEmail">Email:</label>
-                        <input type="email" id="signupEmail" name="email" required>
+                        <label for="signupEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="signupEmail" 
+                            name="email" 
+                            placeholder="you@example.com"
+                            required
+                            autocomplete="email"
+                        >
+                        <span class="form-help"></span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="signupPassword">Password:</label>
-                        <input type="password" id="signupPassword" name="password" required>
+                        <label for="signupPassword">Password</label>
+                        <input 
+                            type="password" 
+                            id="signupPassword" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="new-password"
+                        >
+                        <span class="form-help">Minimum 6 characters</span>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span class="btn-text">Create Account</span>
+                    </button>
                 </form>
                 
-                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" id="showLogin" class="link-primary">Login here</a></p>
+                </div>
             </div>
         </div>
     </main>
