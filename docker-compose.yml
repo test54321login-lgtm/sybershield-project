@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Next.js application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cybershield-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  # Optional: Supabase (for local development)
+  # Note: This requires Supabase CLI. For full local development:
+  # supabase start
+  # supabase db pull
+  # supabase functions serve
+
+volumes:
+  node_modules:
+
+networks:
+  cybershield:
+    driver: bridge

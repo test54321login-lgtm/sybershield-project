@@ -1,32 +1,46 @@
 {
-  "name": "cybershield",
-  "version": "1.0.0",
-  "description": "A cyber awareness and malware information portal",
-  "main": "index.html",
+  "name": "cybershield-nextjs",
+  "version": "2.0.0",
+  "description": "Production-ready cyber awareness platform with Next.js 15, Supabase, and TypeScript",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Build complete - Static site ready for deployment'",
-    "start": "vercel dev",
-    "lint": "echo 'No lint configured'"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "db:migrate": "supabase migration list"
   },
-  "keywords": [
-    "cybersecurity",
-    "education",
-    "awareness",
-    "malware",
-    "web-application"
-  ],
-  "author": "CyberShield Team",
-  "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0",
-    "mongodb": "^6.0.0"
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@supabase/ssr": "^0.4.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "framer-motion": "^11.0.0",
+    "tailwindcss": "^3.4.1",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.0",
+    "next-themes": "^0.2.1",
+    "lucide-react": "^0.408.0",
+    "clsx": "^2.1.0",
+    "date-fns": "^3.3.1"
   },
   "devDependencies": {
-    "vercel": "^44.0.0"
+    "@types/node": "^20.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.3.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "prettier": "^3.1.0",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "^15.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
-  }
+    "node": ">=18.17.0"
+  },
+  "packageManager": "npm@10.0.0"
 }
